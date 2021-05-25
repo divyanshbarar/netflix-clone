@@ -1,0 +1,107 @@
+.profile{
+    height: fit-content;
+    color: white;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile__body{
+   
+    display: flex;
+    flex-direction: column;
+    margin-left:18%;
+    margin-right:auto;
+    width: 50%;
+    
+   
+    padding-top: 12%;
+    max-width: 800px;
+  
+    
+}
+.profile__body>h1{
+    margin-top: 20px;
+    font-size: 60px;
+    font-weight: 400;
+    border-bottom: 1px solid #ff0000;
+    margin-bottom: 20px;
+}
+
+
+.profile__info{
+    display: flex;
+}
+
+.profile__info>img{
+    height: 100px;
+}
+
+.profile__detail{
+   
+    color: white;
+    margin-left: 25px;
+    flex: 1;
+}
+.profile__detail>h2{
+    background-color: gray;
+    padding:15px ;
+    font-size: clamp(5px,3vw,20px);
+    padding-left: 10px;
+    
+}
+.profile__signOut{
+    padding: 17px 20px;
+    font-size: 1rem;
+    margin-top: 7%;
+    width: 100%;
+    color: white;
+    font-weight: 450;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.profile__signOut:hover{
+    background-color: white;
+    color: black;
+}
+
+.profile__plans{
+    margin-top: 20px;
+}
+
+.profile__plans>h3{
+     padding-bottom:10px;
+     border-bottom: 1px solid rgb(255, 0, 0);
+  
+
+}
+
+.plans__details{
+padding: 20px;
+border-bottom: 1px solid rgb(255, 0, 0);
+display: flex;
+flex-direction: column;
+  
+}
+.plans__details>h3{
+padding: 15px 0px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+}
+
+.plans__details>button{
+    width: fit-content;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.plans__details>button:hover{
+    background-color: white;
+    color: black;
+}

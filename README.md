@@ -1,44 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+<img src="https://media-exp1.licdn.com/dms/image/C4E22AQHoqGcQ3JyF8g/feedshare-shrink_1280/0/1620597633216?e=1624492800&v=beta&t=MW8ilE-3yxN02btyNUJl7mKtTnPS0agTMfzL9gX1AQ4" alt="" />
 
-## Available Scripts
+<img src="https://media-exp1.licdn.com/dms/image/C4E22AQGo5zYn2Y25_Q/feedshare-shrink_800/0/1620597633094?e=1624492800&v=beta&t=ECw11hoMKXarzSKqnjmpUau3WrmqnFnUIKzTl1XerSY" alt="" />
 
-In the project directory, you can run:
+npx create-react-app --template redux
 
-### `npm start`
+firebase
+=>auth
+=>hosting
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+for film information
+we will be using tmdb API
+()
+App
+--homescreen
+----nav,banner,row
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> > for showing black navbar on scroll- we use useState which is set to false, and then create a function which defines if(window.scroll>100) then setState to true.... and then useEffect(window.addEventListener("scroll",Function)) and use clean and remove listener
 
-### `npm test`
+> > truncate, we build a function(string,no.) return string.length>n? string.subString(0,n-1)+"..."
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> > fetch movie data from tmdb API -we create a file name axios for requesting server for baseURL
+> > for differnet genre we create the request.js
+> > --in banner we call the axios.get(request->netflixOriginals)>> giives the data of a movie >> now for the images url+backdrop_path
 
-### `npm run build`
+-one-Row await->data.... data.map(image)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+//for authentication
+=>setup firebase
+--register function
+|-> to take input we can useState and useRef
+auth.createUserwithemail and password.then(authUser)
+--signin function
+auth.signInwithEmailandpassword
+return authuser
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+//if signIN then automatically login
+in useEffect auth.onAuthStateChanged
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Redux is a global store
+to avoid prop drooling
+folder structure=> feature>userSlice// slices of onion in a store
+-> changes=> name,initialState, reducers:
 
-### `npm run eject`
+- login(state,action)=>state.user=action.payload
+  -logout(state)=state.user=null
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-->to store the value we use dispatch
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+--> to take out the value we use selectors
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+store->changes for reducer
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+//in app.js
+->dispatch=useDispatch()
+on changing the state of authentication dispatch(login-{user details as payload})
+dispatch(logout())
 
-## Learn More
+//user=useSelector(selectUser) and if user then home otherwise login screen
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+//in profile user=useSelector
+for details...
+onClick SignOut auth.signOut
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+//for trailers...
+->react youtube
+->npm i movie trailer
+youtube (videoId)
+we send the name in the movie trailer it sends us a url in whuch we params the trailerurl part and send it to Youtube

@@ -1,0 +1,37 @@
+.app__footer{
+    color: rgb(168, 168, 168);
+height: 300px ;
+font-family:Georgia, 'Times New Roman', Times, serif;
+
+
+
+}
+.br{
+    margin-top: 60px;
+    background-color: rgb(255, 4, 4);
+    height: 6px;
+}
+.text{
+    margin-top: 40px;
+    
+    font-size: 125%;
+    display: flex;
+    padding-left: 30px;
+
+}
+.image{
+    height: 30px;
+}
+.contact{
+    padding: 30px;
+    font-size: 1.2em;
+}
+.contact__imageDisplay{
+    margin-top: 10px;
+ 
+
+}
+.contact__image{
+    height: 30px;
+    padding-right: 10px;
+}
